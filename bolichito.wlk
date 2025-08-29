@@ -19,5 +19,7 @@ object bolichito {
     method esMonocromatico() = vidriera.color() == mostrador.color()
     method esEquilibrado() = mostrador.peso() > vidriera.peso()
     method hayObjetoColor(unColor) = vidriera.color() == unColor or mostrador.color() == unColor
+    method puedeMejorar() = self.esEquilibrado() || self.esMonocromatico()
+    method hayObjetoColor_YPuedeMejorar(unColor) = self.hayObjetoColor(unColor) && self.puedeMejorar()
     method puedeOfrecerAlgoA(unaPersona) = unaPersona.leGusta(mostrador) || unaPersona.leGusta(vidriera)
 }
